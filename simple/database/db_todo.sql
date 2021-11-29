@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2018 at 07:22 AM
--- Server version: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Waktu pembuatan: 29 Nov 2021 pada 10.15
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,49 +18,38 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_task`
+-- Database: `db_todo`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `task`
+-- Struktur dari tabel `task`
 --
 
 CREATE TABLE `task` (
-  `task_id` int(11) NOT NULL,
-  `task` varchar(150) NOT NULL,
-  `status` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `task_id` varchar(50) NOT NULL,
+  `task_desc` varchar(150) NOT NULL,
+  `status_task` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `task`
+-- Dumping data untuk tabel `task`
 --
 
-INSERT INTO `task` (`task_id`, `task`, `status`) VALUES
-(1, 'Check Errors', 'Done'),
-(4, 'Remove Bugs', ''),
-(5, 'Need Improvements', '');
+INSERT INTO `task` (`task_id`, `task_desc`, `status_task`) VALUES
+('tsk1', 'Benerin Bug', 'DONE');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `task`
+-- Indeks untuk tabel `task`
 --
 ALTER TABLE `task`
   ADD PRIMARY KEY (`task_id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `task`
---
-ALTER TABLE `task`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;COMMIT;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
